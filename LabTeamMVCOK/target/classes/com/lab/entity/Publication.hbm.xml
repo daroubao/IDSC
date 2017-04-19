@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.lab.entity.Publication" table="publication">
+		<id name="PUid" column="PUid">
+			<generator class="native" />
+		</id>
+		<property name="PUtitle" column="PUtitle" />
+		<property name="PUdownUrl" column="PUdownUrl" />
+		<property name="PUkeyword" column="PUkeyword" />
+		<property name="PUpress" column="PUpress" />
+		<property name="PUauthor" column="PUauthor" />
+		<property name="PUbuyUrl" column="PUbuyUrl" />
+		<property name="PUdate" column="PUdate" type="date"/>
+
+
+		<set name="persons" table="connectpup" inverse="true"  lazy="false">
+			<key column="PUidC1"></key>
+			<many-to-many class="com.lab.entity.Person" column="PidC1"></many-to-many>
+		</set>
+		
+	</class>
+</hibernate-mapping>

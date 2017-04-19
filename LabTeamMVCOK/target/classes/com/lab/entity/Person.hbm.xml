@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.lab.entity.Person" table="person">
+		<id name="Pid" column="Pid">
+			<generator class="native" />
+		</id>
+		<property name="Pname" column="Pname" />
+		<property name="Ppicture" column="Ppicture" />
+		<property name="Pposition" column="Pposition" />
+		<property name="Pbc" column="Pbc" />
+		<property name="Paddress" column="Paddress" />
+		<property name="Poffice" column="Poffice" />
+		<property name="Ptel" column="Ptel" />
+		<property name="Pfax" column="Pfax" />
+		<property name="Purl" column="Purl" />
+		<property name="Pemail" column="Pemail" />
+		<property name="Pinterests" column="Pinterests" />
+		<property name="Presume" column="Presume" />
+		<property name="Paward" column="Paward" />
+		
+		
+		
+		
+		<set name="papers" table="connectpap" cascade="all" lazy="false">
+			<key column="PidC"></key>
+			<many-to-many class="com.lab.entity.Paper" column="PAidC"></many-to-many>
+		</set>
+		
+		<set name="publications" table="connectpup" cascade="all" lazy="false">
+			<key column="PidC1"></key>
+			<many-to-many class="com.lab.entity.Publication" column="PUidC1"></many-to-many>
+		</set>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,210 @@
+/* Common styles for all menus */
+.menu {
+	line-height: 1;
+	margin: 0 auto 0.01em;
+}
+
+.menu__list {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.menu__item {
+	display: block;
+	margin: 1em 0;
+}
+
+.menu__link {
+	font-size: 1.05em;
+	font-weight: bold;
+	display: block;
+	padding: 1em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.menu__link:hover,
+.menu__link:focus {
+	outline: none;
+	text-decoration:none
+}
+
+/* Individual styles */
+
+@-webkit-keyframes anim-trinculo {
+	50% {
+		opacity: 0;
+		color: #929292;
+		-webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0);
+	}
+
+	51% {
+		opacity: 0;
+		color: #36506C;
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	75% {
+		opacity: 1;
+		-webkit-transform: translate3d(5px, 0, 0);
+		transform: translate3d(5px, 0, 0);
+	}
+
+	100% {
+		opacity: 1;
+		color: #36506C;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+
+}
+
+@keyframes anim-trinculo {
+	50% {
+		opacity: 0;
+		color: #929292;
+		-webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0);
+	}
+
+	51% {
+		opacity: 0;
+		color: #36506C;
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	75% {
+		opacity: 1;
+		-webkit-transform: translate3d(5px, 0, 0);
+		transform: translate3d(5px, 0, 0);
+	}
+
+	100% {
+		opacity: 1;
+		color: #36506C;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+
+}
+
+/* Stephano */
+.menu--stephano .menu__item {
+	position: relative;
+	margin: 0 1em;
+}
+
+.menu--stephano .menu__link {
+	position: relative;
+	min-width: 105px;
+	text-align: center;
+	color: #b5b5b5;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.menu--stephano .menu__link:hover,
+.menu--stephano .menu__link:focus {
+	color: #929292;
+}
+
+.menu--stephano .menu__item--current .menu__link {
+	color: #36506C;
+}
+
+.menu--stephano .menu__item::before,
+.menu--stephano .menu__link::before,
+.menu--stephano .menu__link::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 10px;
+	height: 2px;
+	opacity: 0;
+	background: #36506C;
+}
+
+/* flipped sides */
+.menu--stephano .menu__link::before,
+.menu--stephano .menu__link::after {
+	-webkit-transform: translate3d(0, 10px, 0);
+	transform: translate3d(0, 10px, 0);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu--stephano .menu__item--current .menu__link::before,
+.menu--stephano .menu__item--current .menu__link::after {
+	opacity: 1;
+}
+
+/* left flip */
+.menu--stephano .menu__link::before {
+	left: 0;
+	-webkit-transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
+}
+
+.menu--stephano .menu__item--current .menu__link::before {
+	-webkit-transform: rotate3d(0, 0, 1, -90deg);
+	transform: rotate3d(0, 0, 1, -90deg);
+}
+
+/* right flip */
+.menu--stephano .menu__link::after {
+	right: 0;
+	-webkit-transform-origin: 100% 0%;
+	transform-origin: 100% 0%;
+}
+
+.menu--stephano .menu__item--current .menu__link::after {
+	-webkit-transform: rotate3d(0, 0, 1, 90deg);
+	transform: rotate3d(0, 0, 1, 90deg);
+}
+
+/* bottom line */
+.menu--stephano .menu__item::before {
+	left: 0;
+	width: 100%;
+	-webkit-transform: translate3d(0, 10px, 0);
+	transform: translate3d(0, 10px, 0);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu--stephano .menu__item--current::before {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.1s;
+	transition: transform 0.3s, opacity 0.1s;
+}
+
+
+/* YOUR STYLE (Shakespeare character name) see README.md for details */
+
+/* Media queries */
+
+/* Stack items for smaller screens */
+@media screen and (max-width:55em) {
+	.menu__list {
+		display: block;
+		margin: 0 auto;
+	}
+
+}

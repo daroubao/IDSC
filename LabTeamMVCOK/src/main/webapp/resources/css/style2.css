@@ -1,0 +1,153 @@
+@charset "utf-8";
+/*index*/
+.index_public{
+    width: 980px;
+    margin:0 auto;
+}
+/*case*/
+/*.index_case_banner img{
+    width: 980px;
+    height: 300px;
+}*/
+
+.case_main{
+    margin-top: 35px;
+    padding:10px 10px 30px;
+    border:1px solid #ccc;
+    width: 960px;
+    margin-bottom: 50px;
+}
+.case_left{
+    float: left;
+    width: 210px;
+    border:1px solid #ccc;
+
+}
+.case_left_t{
+    height: 45px;
+    line-height: 45px;
+    background: #1C65B1;
+}
+.case_left_t1{
+    font-size: 18px;
+    font-weight: bold;;
+    color: #fff;
+    padding-left:25px;
+}
+.case_left_t2{
+    color:#fff;
+    font-style: italic;
+}
+.case_left_ul1{
+    padding-left: 5px;
+}
+.case_left_ul1 li{
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #aaa;
+    padding-left: 30px;
+}
+.case_left_ul1 li:before{
+    content:url(../images/case1_07.png);
+    margin-right: 25px;
+}
+a.case_left_li_on{
+    color:#1C65B1;
+}
+.case_left_b{
+    height: 40px;
+    line-height: 40px;
+    background: #C9CACA;
+    margin-top: 40px;
+}
+.case_left_b1{
+    font-size: 18px;
+    font-weight: bold;;
+    color: #383838;
+    padding-left:25px;
+}
+.case_left_b2{
+
+    float: right;
+    margin-right: 20px;
+    font-size: 16px;
+}
+.case_left_ul2{
+    padding-left: 15px;
+}
+.case_left_ul2 li{
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color:#555;
+}
+.case_left_b2 a{
+    color:#777;
+}
+.case_left_ul2  li:before{
+    content:url(../images/case1_18.png);
+    margin-right: 10px;
+}
+
+.case_right{
+    float: right;
+    width: 657px;
+}
+.case_right_f{
+    height: 40px;
+    border-bottom: 1px dashed #777;
+    padding:0 10px;
+}
+.case_right_f_l{
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1C65B1;
+    margin-left: 5px;
+    border-left: 5px solid #1C65B1;
+    padding-left: 10px;
+}
+.case_right_f_r{
+    float: right;
+    margin-top: 10px;
+}
+.case_right_f_r a{
+    font-size: 12px;
+    margin-right: 5px;
+}
+.case_right_f_r a:last-child{
+    color:#1C65B1;
+    font-weight: bold;
+}
+
+.case_right_box{
+    padding:30px 10px;
+}
+.case_right_dl{
+    float: left;
+    text-align: center;
+    margin-right: 28px;
+    margin-bottom: 15px;
+}
+
+.case_right_dl dt img{
+    width: 130px;
+    height: 150px;
+}
+.case_right_box dd{
+    line-height: 48px;
+    font-size: 12px;
+}
+.case_right_dl:nth-child(4n){
+    margin-right: 0px;
+}
+.page{
+    text-align: center;
+    margin:60px 0;
+}
+.page a{
+    padding:8px 10px;
+    border:2px solid #ccc;
+}
