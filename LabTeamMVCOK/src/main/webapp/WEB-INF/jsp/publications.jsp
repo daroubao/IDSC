@@ -62,12 +62,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 <div style="float:left;;">
 					 <nav>
 			        		 <ul>
-								<li ><a  href="<%=path %>/index">HOME</a></li>
-								<li><a href="#about" class="scroll">IDSC</a></li>
-								<li><a href="#portfolio" class="scroll">EVENTS</a></li>
-								<li><a href="#team" class="scroll">MEMBERS</a></li>
-								<li class="active"><a href="#blog" class="scroll">PUBLICATIONS</a></li>
-								<li class="last"><a href="#contact" class="scroll">CONTACT US</a></li>
+								<li><a href="<%=path %>/index">HOME</a></li>
+								<li><a href="<%=path %>/welcome/Introduction" class="scroll">IDSC</a></li>
+								<li><a href="<%=path %>/recent/r" class="scroll">EVENTS</a></li>
+								<li><a href="<%=path %>/members" class="scroll">MEMBERS</a></li>
+								<li class="active"><a href="<%=path %>/publication/getPublication" class="scroll">PUBLICATIONS</a></li>
+								<li class="last"><a href="<%=path %>/welcome/Contact" class="scroll">CONTACT US</a></li>
 							</ul>
 		        	</nav>
 					</div>
@@ -85,7 +85,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   <!-----start-header---->
 	</div>
 </div>
-	<script type="text/javascript"  src="js/menu.js"></script>
+	<!-- <script type="text/javascript"  src="js/menu.js"></script> 
+	-->
 </div>
 
 
@@ -118,12 +119,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       	<span class="input-group-btn">
        		<button class="btn btn-default" type="button">Search</button>
       	</span>
-      <%-- <form action="<%=path %>/publication/SearchRsult" method="get">
-      <input type="text" name="contents" class="form-control" placeholder="Search From Here">
-      <span class="input-group-btn">
-        <input class="btn btn-default" type="submit" value="Search"/>
-      </span>    
-      </form> --%>
     </div>
   </div>
 </div>
@@ -149,7 +144,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               			authors:
               			<c:if test="${!empty p.persons}">
               				<c:forEach items="${p.persons}" var="s">
-              				<a href="${s.purl}">${s.pname}</a>
+              				<a href="<%=path %>/member/${s.pname}">${s.pname}</a>
                 	     	</c:forEach>
                 	     </c:if>
               		</div>

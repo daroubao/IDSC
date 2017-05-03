@@ -38,6 +38,9 @@ public class ShowInfoController {
 		System.out.println(Pname);
 		
 		pname=Pname;//设置当前人员名字
+		String [] Names=Pname.split("_");//字符串分割
+		String surname=Names[1];
+		String name=Names[0];
 		
 		Person p=showInfoService.findByName(Pname);
 		Set<Paper> papers=p.getPapers();
@@ -85,6 +88,8 @@ public class ShowInfoController {
 		System.out.println("================================这里是分割线==============================================");
 		
 		
+		model.addAttribute("surname", surname);
+		model.addAttribute("name", name);
 		
 		model.addAttribute("p", p);
 		model.addAttribute("papers", papers);
@@ -243,7 +248,11 @@ public class ShowInfoController {
 		Set<Paper> papers=p.getPapers();
 		String json="[";
 		for (Paper paper : papers) {
-			if(year.equals(paper.getPAdate().toString())){
+			if(!year.equals("all")){
+				if(year.equals(paper.getPAdate().toString())){
+					json+="{\"PAtitle\":\""+paper.getPAtitle()+"\",\"PAurl\":\""+paper.getPAurl()+"\"},";
+				}
+			}else{
 				json+="{\"PAtitle\":\""+paper.getPAtitle()+"\",\"PAurl\":\""+paper.getPAurl()+"\"},";
 			}
 		}

@@ -12,6 +12,7 @@ public class Cscholar {
 	private String CSname;
 	private String CSintroduce;
 	private String CSproject;
+	private String CSurl;
 	public int getCSid() {
 		return CSid;
 	}
@@ -35,6 +36,12 @@ public class Cscholar {
 	}
 	public void setCSproject(String cSproject) {
 		CSproject = cSproject;
+	}
+	public String getCSurl() {
+		return CSurl;
+	}
+	public void setCSurl(String cSurl) {
+		CSurl = cSurl;
 	}
 	
 	

@@ -11,6 +11,7 @@
 		<property name="Pid" column="Pid" />
 		<property name="Idate" column="Idate" />
 		<property name="Iplace" column="Iplace" />
+		<property name="Isponsor" column="Isponsor" />
 
 	</class>
 </hibernate-mapping>

@@ -7,7 +7,6 @@
 				success:function(data){
 					data= $.parseJSON(data);
 					console.log(data);
-					console.log(length);
 					setYear(data);
 					setCurrentLink();
 					ajaxgetContent(data[0]);
@@ -15,6 +14,11 @@
 		});
 		$(".menu__item").delegate(".a","click",function(){
 			var year = $(this).html();
+			console.log(year);
+			ajaxgetContent(year);
+		});
+		$(".menu__item").delegate(".more","click",function(){
+			var year ="all";
 			console.log(year);
 			ajaxgetContent(year);
 		});
@@ -93,6 +97,7 @@
 			for(var i=1;i<4;i++){
 				str+="<li class=\"menu__item\"><a class=\"menu__link a\">"+data[i]+"</a></li>";
 			}
+			str+="<li class=\"menu__item\"><a class=\"menu__link more\">MORE..</a></li>";
 		}
 		$("#menu__list").append(str);
 	}

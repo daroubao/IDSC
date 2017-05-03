@@ -10,27 +10,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
 <title>IDSC Lab</title>
 <base href="<%=basePath%>/resources/">
-		<link href="css/style-login.css" rel='stylesheet' type='text/css' />
-		<script type="text/javascript" src="js/placeholder.js"></script>
-		
-		<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-		<script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		</script>
-    	<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    	
+		<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<!-- 
+		<link href="css/style-login.css" rel='stylesheet' type='text/css' /> -->
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
     	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-		<!--  jquery plguin -->
-	    <script type="text/javascript" src="js/jquery.min.js"></script>
 		<!--start slider -->
 	    <link rel="stylesheet" href="css/fwslider.css" media="all">
+		<!--  jquery plguin -->
+	    <script type="text/javascript" src="js/jquery.min.js"></script>
+	    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		</script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/css3-mediaqueries.js"></script>
 		<script src="js/fwslider.js"></script>
-	<!--end slider -->
+		<!-- <script type="text/javascript" src="js/placeholder.js"></script> 
+		 -->
+		<!--end slider -->
 	 <script type="text/javascript">
 			$(document).ready(function() {
 			
@@ -197,7 +199,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<div class="container">
 				<div class="row">               
 				    <div class="col-md-12">			
-				        <a href="<%= request.getContextPath()%>/index-welcome.jsp"><h3>ABOUT US</h3></a>
+				        <a href="<%= request.getContextPath()%>/welcome/Introduction"><h3>ABOUT US</h3></a>
 				        <span> </span>
 				        <p  style="color:#a0a0a0">IDSC is IZA's organizational unit whose purpose is to serve the scientific and infrastructural computing needs of IZA and its affiliated communities.</p>
 					</div>
@@ -211,7 +213,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<p>IDSC is dedicated to supporting all users of data from the novice researcher to the experienced data analyst. </p>
 			<p>IDSC aims at becoming the place for economically minded technologists and technologically savvy economists looking for data support, data access support and data services about labor economics.</p>
 			<p>IDSC is actively involved in organizing events (see our next Red Cube Seminar Talk) for data professionals, data analysts, and scientific data users and young researchers to discuss and share findings and to establish contacts for future cooperation.</p>
-			<p><a href="<%= request.getContextPath()%>/index-welcome.jsp">READ MORE</a></p>
+			<p><a href="<%= request.getContextPath()%>/welcome/Introduction">READ MORE</a></p>
 		</div>	
 		<div class="about-right pull-right">
 			<img src="images/about_.jpg" alt=""/>
@@ -221,23 +223,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- service -->
 <div class="service text-center">
 	<div class="container">
-        <a href="<%= request.getContextPath()%>/index-welcome-RESEARCH-DIRECTION.jsp"><h3>RESEARCH DIRECTION</h3></a>
+        <a href="<%= request.getContextPath()%>/welcome/ResearchDirection"><h3>RESEARCH DIRECTION</h3></a>
         <p style="color:#a0a0a0;text-align:center;">--乱写的--实验室以分布式平台为基础，结合多种机器学习与数据挖掘算法，在移动互联网、金融、服务计算等各个应用领域深入研究，挖掘信息，创造价值。</p>
        <div class="service-bottom">
 	        <div class="row">
 			    <div class="col-md-4">	
 			    	<img src="images/contact.png" alt=""/>		
-			        <h4><a href="index.html">DISTRIBUTED PLATFORM</a></h4>
+			        <h4><a href="<%= request.getContextPath()%>/welcome/Projects">DISTRIBUTED PLATFORM</a></h4>
 			        <p style="color:#686868">分布式平台是指将数据存储、数据分析和计算等构建在由多个主机构成的集群上的软件平台。实验室主要关注用于大数据分析的分布式机器学习运算平台。在该研究方向上，实验室与香港中文大学开展紧密合作，并在香港中文大学深圳研究院设立联合研究基地，定期进行访问交流。在平台资源方面，实验室能调用天河二号超级计算机、香港中文大学GraphLab集群、PlanetLab、阿里云、Amazon EC2等平台资源，为该研究方向的开展提供有力的支撑。</p>
 				</div>
 				<div class="col-md-4">	
 					<img src="images/flag.png" alt=""/>		
-			        <h4><a href="index.html">ALGORITHM</a></h4>
+			        <h4><a href="<%= request.getContextPath()%>/welcome/Projects">ALGORITHM</a></h4>
 			        <p style="color:#686868">围绕常用的机器学习及数据挖掘算法，比如包括矩阵分解、协同过滤、分解机、SVM、LDA、深度学习等算法进行深入研究，为顶层各种应用场景提供支撑。实验室的各个应用研究方向都需要用到相关算法。例如，在移动应用研究中，我们获取用户、移动应用等信息后，使用矩阵分解、协同过滤、SVM等算法，分析用户与应用的相关性，为用户推荐可能喜欢的应用；而在金融大数据的研究上面，需要各种机器学习算法分析大量的金融交易数据，构建各种量化交易模型；服务计算研究中，使用分解机、深度学习等方法，对大量网络请求服务质量数据进行计算，推荐、从而预测网络的性能，提高服务质量。以上各个应用场景均存在计算量巨大的挑战，因此需要通过算法并行化的方法，结合底层分布式平台，加快运算速度。同时，也需要将算法在线化，提高算法动态性和自适应性，以实时适应动态多变的现实计算环境。</p>
 				</div>
 				<div class="col-md-4">	
 					<img src="images/fl.png" alt=""/>		
-			        <h4><a href="<%= request.getContextPath()%>/index-welcome-APPLICATIONS.jsp">APPLICATION</a></h4>
+			        <h4><a href="<%= request.getContextPath()%>/welcome/Projects">APPLICATION</a></h4>
 			        <p style="color:#686868">随着移动互联网的快速发展，各种各样移动应用不断涌现。移动应用市场的规模巨大、应用数量惊人，对应用开发者及使用者都提出了严峻的挑战。开发者面临定位市场需求、快速搜集第三方库、选择远程API、控制安全性等实际设计及开发问题。使用者在应用搜索、选择、安全等多方面更是面临不少困难。 </p>
 				</div>
 			</div>	
@@ -297,46 +299,54 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        		<ul>
 					<li><div class="view view-fourth">
 						     <img src="images/port1_.jpg" alt=""/>
+						     <a href="<%= request.getContextPath()%>/recent/r">
+							 <div class="mask">	
+							      <div class="border">                   
+									   <h2>IDSC  Lab</h2>
+									   <span></span>
+									   <p class="a">EVENTS</p>		                       
+								  </div>                                                 
+							 </div>	
+							 </a>	
+						</div>	
+					</li>
+					<li><div class="view view-fourth">
+						     <img src="images/port2_.jpg" alt=""/>
+						     <a href="<%= request.getContextPath()%>/recent/r">
 							 <div class="mask">	
 							      <div class="border">                   
 									   <h2>IDSC  Lab</h2>
 									   <span></span>
 									   <p class="a">NEWS</p>		                       
 								  </div>                                                 
-							 </div>		
-						</div>	
-					</li>
-					<li><div class="view view-fourth">
-						     <img src="images/port2_.jpg" alt=""/>
-							 <div class="mask">	
-							      <div class="border">                   
-									   <h2>IDSC  Lab</h2>
-									   <span></span>
-									   <p class="a">SHARE&COOPERATION</p>		                       
-								  </div>                                                 
-							 </div>		
+							 </div>
+							 </a>		
 						</div>	
 					</li>
 					<li><div class="view view-fourth">
 						     <img src="images/port3_.jpg" alt=""/>
+							 <a href="<%= request.getContextPath()%>/recent/meeting">
 							 <div class="mask">	
 							      <div class="border">                   
 									   <h2>IDSC  Lab</h2>
 									   <span></span>
-									   <p class="a">METTING</p>		                       
+									   <p class="a">MEETING</p>		                       
 								  </div>                                                 
-							 </div>		
+							 </div>	
+							 </a>	
 						</div>	
 					</li>
 					<li><div class="view view-fourth">
 						     <img src="images/port4_.jpg" alt=""/>
+							 <a href="<%= request.getContextPath()%>/recent/meeting">
 							 <div class="mask">	
 							      <div class="border">                   
 									   <h2>IDSC  Lab</h2>
 									   <span></span>
 									   <p class="a">MORE+</p>		                       
 								  </div>                                                 
-							 </div>		
+							 </div>
+							 </a>		
 						</div>	
 					</li>
 			</ul>	
@@ -459,7 +469,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 	        <div class="clearfix"> </div>
          </div>
-		 <div class="paperbutton"><a href="index.html">READ MORE</a></div>
+		 <div class="paperbutton"><a href="<%= request.getContextPath()%>/publication/getPublication">READ MORE</a></div>
          <div id="allposts">
 		 
 		 <!--<div class="post" style="margin:0 auto;"><a href="#">All  Posts</a></div>
@@ -473,7 +483,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="container">
 		<div class="col-md-12">	
 		<!--<span> </span>-->
-		<a href="<%= request.getContextPath()%>/index-welcome-CONTACT.jsp"><h3>CONTACT US</h3></a>
+		<a href="<%= request.getContextPath()%>/welcome/Contact"><h3>CONTACT US</h3></a>
 			
 			</div>
 		<div class="row">

@@ -19,25 +19,23 @@ public class BookDaoImpl implements BookDao {
 	public List<Publication> getAllBook() {
 		System.out.println("Dao中的方法被执行");
 		String hql="from Publication b order by b.PUdate desc";
-		Session session=sessionFactory.openSession();
+		Session session=sessionFactory.getCurrentSession();
 		Transaction tx=session.beginTransaction();
 		Query query=session.createQuery(hql);
 		List<Publication> list=query.list();
 		tx.commit();
-		session.close();
 		return list;
 	}
 
 	public Publication getBook(String id) {
 		System.out.println("Dao中的方法被执行");
 		String hql="from Publication b where b.PUid=?";
-		Session session=sessionFactory.openSession();
+		Session session=sessionFactory.getCurrentSession();
 		Transaction tx=session.beginTransaction();
 		Query query=session.createQuery(hql);
 		query.setString(0, id);
 		Publication book=(Publication) query.uniqueResult();
 		tx.commit();
-		session.close();
 		return book;
 	}
 	

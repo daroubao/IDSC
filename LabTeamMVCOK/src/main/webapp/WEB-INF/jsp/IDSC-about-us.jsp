@@ -13,21 +13,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		
 		<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 		<link  href="css/style_members.css" rel="stylesheet"type="text/css">
-		<script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		</script>
-    	<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+		<link href="css/font.css" rel="stylesheet" type="text/css">
     	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-		<!--  jquery plguin -->
-	    <script type="text/javascript" src="js/jquery.min.js"></script>
 		<!--start slider -->
 	    <link rel="stylesheet" href="css/fwslider.css" media="all">
-		<script src="js/jquery-ui.min.js"></script>
+		
+		<!--  jquery plguin -->
+	    <script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>		
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		</script>
+    	<script src="js/jquery-ui.min.js"></script>
 		<script src="js/css3-mediaqueries.js"></script>
 		<script src="js/fwslider.js"></script>
 
@@ -53,13 +54,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 <div style="float:left;;">
 					 <nav>
 			        		 <ul>
-								<li class="active"><a  href="<%= request.getContextPath()%>/index">HOME</a></li>
-								<li><a href="<%= request.getContextPath()%>/index-welcome.jsp" class="scroll">IDSC</a></li>
-								<li><a href="<%= request.getContextPath()%>/IDSC-Recent.jsp" class="scroll">EVENTS</a></li>
-								<li><a href="<%= request.getContextPath()%>/members" class="scroll">MEMBERS</a></li>
-								<li><a href="<%= request.getContextPath()%>/index-welcome-APPLICATIONS.jsp" class="scroll">PUBLICATIONS</a></li>
-								<li class="last"><a href="<%= request.getContextPath()%>/index-welcome-CONTACT.jsp" class="scroll">CONTACT US</a></li>
-								
+								<li><a href="<%=path %>/index">HOME</a></li>
+								<li><a href="<%=path %>/welcome/Introduction" class="scroll">IDSC</a></li>
+								<li><a href="<%=path %>/recent/r" class="scroll">EVENTS</a></li>
+								<li class="active"><a href="<%=path %>/members" class="scroll">MEMBERS</a></li>
+								<li><a href="<%=path %>/publication/getPublication" class="scroll">PUBLICATIONS</a></li>
+								<li class="last"><a href="<%=path %>/welcome/Contact" class="scroll">CONTACT US</a></li>
 							</ul>
 		        	</nav>
 					</div>
@@ -78,7 +78,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   <!-----start-header---->
 		</div>
 	</div>
-		<script type="text/javascript"  src="js/menu.js"></script>
+	<!-- 
+		<script type="text/javascript"  src="js/menu.js"></script> -->
 </div>
 <!------------------------left---------------------------->
 

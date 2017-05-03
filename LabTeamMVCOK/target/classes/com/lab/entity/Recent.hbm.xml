@@ -9,6 +9,9 @@
 		</id>
 		<property name="Rthem" column="Rthem" />
 		<property name="Rdate" column="Rdate" />
+		<property name="RUrl" column="RUrl" />
+		<property name="RText" column="RText" />
+		<property name="RPicture" column="RPicture" />
 		
 	</class>
 </hibernate-mapping>

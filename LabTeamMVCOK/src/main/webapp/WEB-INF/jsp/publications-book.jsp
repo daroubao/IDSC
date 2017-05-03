@@ -26,10 +26,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="css/paper.css">
 
-
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
 <script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
 <script type="text/javascript" src="js/jquery.cslider.js"></script>
-	
+<!-- 
+<script type="text/javascript"  src="js/menu.js"></script>	 -->
+
 </head>
 <body>
 <!--å¯¼èªæ -->
@@ -50,13 +52,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 <div style="width:1000000px;">
 					 <div style="float:left;;">
 					 <nav>
-			        		 <ul>
-								<li ><a  href="<%=path %>/index">HOME</a></li>
-								<li><a href="#about" class="scroll">IDSC</a></li>
-								<li><a href="#portfolio" class="scroll">EVENTS</a></li>
-								<li><a href="#team" class="scroll">MEMBERS</a></li>
-								<li class="active"><a href="publications.html" class="scroll">PUBLICATIONS</a></li>
-								<li class="last"><a href="#contact" class="scroll">CONTACT US</a></li>
+			        		<ul>
+								<li><a href="<%=path %>/index">HOME</a></li>
+								<li><a href="<%=path %>/welcome/Introduction" class="scroll">IDSC</a></li>
+								<li><a href="<%=path %>/recent/r" class="scroll">EVENTS</a></li>
+								<li><a href="<%=path %>/members" class="scroll">MEMBERS</a></li>
+								<li class="active"><a href="<%=path %>/publication/getPublication" class="scroll">PUBLICATIONS</a></li>
+								<li class="last"><a href="<%=path %>/welcome/Contact" class="scroll">CONTACT US</a></li>
 							</ul>
 		        	</nav>
 					</div>
@@ -65,16 +67,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			    <div style="clear:both"></div>
 			  </div>
-			  <a href="#" id="navbtn">Nav Menu</a>
+			  <a id="navbtn">Nav Menu</a>
 			  <div style="clear:both"></div>
-			  <div class="clearfix"> </div>
+			  <div class="clearfix"> </div> 
+
 		    </header>
 		         <!----start-top-nav---->
 		</div>
 		   <!-----start-header---->
 	</div>
 </div>
-	<script type="text/javascript"  src="js/menu.js"></script>
+
 </div>
 
 <!--Body-->
@@ -87,7 +90,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	    <span><b>Author:</b></span>
     	    <c:if test="${!empty book.persons}">
         		<c:forEach items="${book.persons}" var="s">
-            		<a href="${s.purl}">${s.pname}</a>
+            		<a href="<%=path %>/member/${s.pname}">${s.pname}</a>
             	</c:forEach>
         	</c:if>			
 	    </div>	

@@ -88,12 +88,11 @@ public class PaperDaoImpl implements PaperDao {
 		// TODO Auto-generated method stub
 		System.out.println("Dao中的方法被执行");
 		String hql="from Paper p order by p.PAdate desc";
-		Session session=sessionFactory.openSession();
+		Session session=sessionFactory.getCurrentSession();
 		Transaction tx=session.beginTransaction();
 		Query query=session.createQuery(hql);
 		List<Paper> list=query.list();
 		tx.commit();
-		session.close();
 		return list;
 	}
 
@@ -101,40 +100,13 @@ public class PaperDaoImpl implements PaperDao {
 	public Paper getPaper(String id) {
 		System.out.println("Dao中的方法被执行");
 		String hql="from Paper p where p.PAid=?";
-		Session session=sessionFactory.openSession();
+		Session session=sessionFactory.getCurrentSession();
 		Transaction tx=session.beginTransaction();
 		Query query=session.createQuery(hql);
 		query.setString(0, id);
 		Paper paper=(Paper) query.uniqueResult();
 		tx.commit();
-		session.close();
 		return paper;
 	}
-	
-	/*@Override
-	public int getCount(String hqls) {			//获取查询结果的条数
-		final String hql=hqls;
-		Session session=sessionFactory.getCurrentSession();
-		Transaction tx=session.beginTransaction();
-		Query query=session.createQuery(hql);
-		@SuppressWarnings("rawtypes")
-		List list=query.list();
-		String li=list.get(0).toString();
-		Integer count=Integer.parseInt(li);
-		tx.commit();
-		return count;
-	}
-	public List<Paper> getPageContent(String hqls,int pageoffset,int pageSize){ //获取当前页面内容
-		final String hql=hqls;
-		Session session=sessionFactory.getCurrentSession();
-		Transaction tx=session.beginTransaction();
-		Query query=session.createQuery(hql);
-		query.setFirstResult(pageoffset);    //开始检索位置
-		query.setMaxResults(pageSize);		 //最大记录行
-		@SuppressWarnings("unchecked")
-		List<Paper> list=query.list();
-		tx.commit();
-		return list;
-	}*/
 	
 }

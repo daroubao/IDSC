@@ -48,13 +48,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 <div style="width:1000000px;">
 					 <div style="float:left;;">
 					 <nav>
-			        		 <ul>
-								<li ><a  href="<%=path %>/index">HOME</a></li>
-								<li><a href="#about" class="scroll">IDSC</a></li>
-								<li><a href="#portfolio" class="scroll">EVENTS</a></li>
-								<li><a href="#team" class="scroll">MEMBERS</a></li>
-								<li class="active"><a href="publications.html" class="scroll">PUBLICATIONS</a></li>
-								<li class="last"><a href="#contact" class="scroll">CONTACT US</a></li>
+							<ul>
+								<li><a href="<%=path %>/index">HOME</a></li>
+								<li><a href="<%=path %>/welcome/Introduction" class="scroll">IDSC</a></li>
+								<li><a href="<%=path %>/recent/r" class="scroll">EVENTS</a></li>
+								<li><a href="<%=path %>/members" class="scroll">MEMBERS</a></li>
+								<li class="active"><a href="<%=path %>/publication/getPublication" class="scroll">PUBLICATIONS</a></li>
+								<li class="last"><a href="<%=path %>/welcome/Contact" class="scroll">CONTACT US</a></li>
 							</ul>
 		        	</nav>
 					</div>
@@ -85,7 +85,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   --> 
  <div class="black_background" style="position:fixed;top:0px;left:0px;display:none;width:100%;height:100%;background-color: rgba(0, 0, 0,0.5);z-index:1;">
  	<div class="media" style="margin:0px auto;background-color: rgb(255, 255, 255); width: 800px;height:100vh;z-index:2;">
-		<iframe width="800" height="100%" src="${paper.PAurl }">
+		<iframe width="800" height="100%" src="document/${paper.PAurl }">
 		</iframe>
 	</div>
  </div>
@@ -99,7 +99,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <span><b>Author:</b></span>
         <c:if test="${!empty paper.persons}">
         	<c:forEach items="${paper.persons}" var="s">
-            	<a href="${s.purl}">${s.pname}</a>
+            	<a href="<%=path %>/member/${s.pname}">${s.pname}</a>
             </c:forEach>
         </c:if>				
     </div>	 
@@ -131,9 +131,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<span>${paper.PAkeyword }</span>			
 	</div>
 </div>	
-<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 	
-<script type="text/javascript"  src="js/menu.js"></script>
+<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
+<!-- 
+<script type="text/javascript"  src="js/menu.js"></script> -->
 <script type="text/javascript" src="js/jquery.media.js"></script> 	
 <script type="text/javascript" src="js/jquery.cslider.js"></script>
 <script type="text/javascript">  

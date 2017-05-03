@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="com.lab.entity.Person,com.lab.controller.ShowInfoController" %>
 
@@ -16,28 +16,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 		<link  href="css/style_members_display.css" rel="stylesheet"type="text/css">
-			<link rel="stylesheet" type="text/css" href="css/display_normalize.css" />
-	<link rel="stylesheet" type="text/css" href="css/display_default.css">
-	<link rel="stylesheet" type="text/css" href="css/display_component.css" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		</script>
-    	<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'> 
+		<link rel="stylesheet" type="text/css" href="css/display_normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/display_default.css">
+		<link rel="stylesheet" type="text/css" href="css/display_component.css" />
+		<link href="css/font.css" rel='stylesheet' type='text/css'>
     	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />		
 		<!--start slider -->
 	    <link rel="stylesheet" href="css/fwslider.css" media="all">
 	    
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
 	    <!--  jquery plguin -->
-	    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		</script>
+    	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="js/jquery.media.js"></script>
 		<script src="js/css3-mediaqueries.js"></script>
 		<script src="js/fwslider.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<!--end slider -->
-	 <script type="text/javascript">
+		<!--end slider -->
+	 	<script type="text/javascript">
 			$(document).ready(function() {
 			
 				var defaults = {
@@ -56,8 +57,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!-- da-slider -->
 		<link rel="stylesheet" type="text/css" href="css/slider.css" />
 		<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
-<script type="text/javascript" src="js/jquery.cslider.js"></script>
-	<!-- <script type="text/javascript">
+		<script type="text/javascript" src="js/jquery.cslider.js"></script>
+		<!-- <script type="text/javascript">
 			$(function() {
 
 				$('#da-slider').cslider({
@@ -135,13 +136,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 <div style="float:left;;">
 					 <nav>
 			        		 <ul>
-								<li class="active"><a  href="<%= request.getContextPath()%>/index">HOME</a></li>
-								<li><a href="<%= request.getContextPath()%>/index-welcome.jsp" class="scroll">IDSC</a></li>
-								<li><a href="<%= request.getContextPath()%>/IDSC-Recent.jsp" class="scroll">EVENTS</a></li>
-								<li><a href="<%= request.getContextPath()%>/members" class="scroll">MEMBERS</a></li>
-								<li><a href="<%= request.getContextPath()%>/index-welcome-APPLICATIONS.jsp" class="scroll">PUBLICATIONS</a></li>
-								<li class="last"><a href="<%= request.getContextPath()%>/index-welcome-CONTACT.jsp" class="scroll">CONTACT US</a></li>
-								
+								<li><a href="<%=path %>/index">HOME</a></li>
+								<li><a href="<%=path %>/welcome/Introduction" class="scroll">IDSC</a></li>
+								<li><a href="<%=path %>/recent/r" class="scroll">EVENTS</a></li>
+								<li class="active"><a href="<%=path %>/members" class="scroll">MEMBERS</a></li>
+								<li><a href="<%=path %>/publication/getPublication" class="scroll">PUBLICATIONS</a></li>
+								<li class="last"><a href="<%=path %>/welcome/Contact" class="scroll">CONTACT US</a></li>
 							</ul>
 		        	</nav>
 					</div>
@@ -160,7 +160,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   <!-----start-header---->
 		</div>
 	</div>
-		<script type="text/javascript"  src="js/menu.js"></script>
+	<!-- 
+		<script type="text/javascript"  src="js/menu.js"></script> -->
 </div>
 <!------------------------left---------------------------->
 <div style="width:1304px;margin:0 auto;text-align:left;">
@@ -222,7 +223,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<h2>Books (authored & edited)</h2>
 	<ul>
 		<li><p style="line-height:150%">
-			<a href="http://www.amazon.com/s/ref=sr_pg_1?rh=n%3A283155%2Ck%3A${p.pname }&keywords=${p.pname }&ie=UTF8&qid=1432711121">
+			<a href="http://www.amazon.com/s/ref=sr_pg_1?keywords=${name}+${surname}&ie=UTF8&qid=1432711121">
 				<span>Amazon.com</span>
 			</a>
 		</p></li>
@@ -230,27 +231,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<h3>Articles</h3>
 	<ul>			
 		 <li><span ><b style="mso-bidi-font-weight:bold"><span>
-		 	<a href="http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/l/Liu:Jiming.html">
+		 	<a href="http://dblp.uni-trier.de/pers/hd/l/${surname}:${name}">
 		 		<span>DBLP Bibliography Server</span>
 		 	</a></span></b></span>
 		 </li>
 		 <li><span ><b style="mso-bidi-font-weight:bold"><span>
-		 	<a href="http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=%22First%20Name%22:jiming&searchWithin=%22Last%20Name%22:liu&newsearch=true">
+		 	<a href="http://ieeexplore.ieee.org/search/searchresult.jsp?searchWithin=%22First%20Name%22:${name}&searchWithin=%22Last%20Name%22:${surname}&newsearch=true">
 		 		<span>IEEE Xplore Digital Library</span>
 		 	</a></span></b></span>
 		 </li>
 		 <li><span ><b style="mso-bidi-font-weight:bold"><span>
-		 	<a href="http://dl.acm.org/results.cfm?query=${p.pname }">
+		 	<a href="http://dl.acm.org/results.cfm?query=${surname}%20${name}">
 		 		<span>ACM Digital Library</span>
 		 	</a></span></b></span>
 		 </li>
 		 <li><span ><b style="mso-bidi-font-weight:bold"><span>
-		 	<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=${p.pname }">
+		 	<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=${surname}%2C+${name}">
 		 		<span>PubMed</span>
 		 	</a></span></b></span>
 		 </li>
 		 <li><span ><b style="mso-bidi-font-weight:bold"><span>
-		 	<a href="http://scholar.google.com/scholar?q=${p.pname }">
+		 	<a href="http://scholar.google.com/scholar?q=${name}+${surname}">
 		 		<span>Google Scholar</span>
 		 	</a></span></b></span>
 		 </li>	 
@@ -314,16 +315,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div class="clear"></div>
             </header>
 			<p style="line-height:150%">
-			<span>${p.presume}..</span>			
+			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${p.presume}.</span>			
   				</br>
   				</br>
-			Prof. Liu’s present research focuses on: ${p.pinterests}..
+			<span style="color: #262626;font-weight:bold;font-size: 15.5pt;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;present research focuses on:
+				</span> ${p.pinterests}.
 			 	</br>
 				</br>
-			${p.paward}.
+			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${p.paward}.</span>
 				</br>
 				</br>
-			
+			</p>
 			<h2>Research</h2>
 			<div class="research_menu">	
 				<section class="section section--menu" id="Stephano">
@@ -370,7 +373,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
 	
 	
-	<script type="text/javascript" src="js/member_year_paper.js"></script>
 	 <!-- scroll_top_btn -->
 		<script type="text/javascript" src="js/move-top.js"></script>
 		<script type="text/javascript" src="js/easing.js"></script>
@@ -382,6 +384,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			});
 		});
 	</script>
+	
+	<script type="text/javascript" src="js/member_year_paper.js"></script>
+	
 	<script src="js/classie.js"></script>
 	<script src="js/clipboard.min.js"></script>
 	<script>

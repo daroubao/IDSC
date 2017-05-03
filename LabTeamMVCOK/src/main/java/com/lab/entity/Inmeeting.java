@@ -1,13 +1,22 @@
 package com.lab.entity;
 
-import java.util.Date;
 
 public class Inmeeting {
 	private Integer Iid;
 	private String Itheme;
 	private Integer Pid;
-	private Date Idate;
+	private String Idate;
 	private String Iplace;
+	private String Isponsor;
+
+	public String getIsponsor() {
+		return Isponsor;
+	}
+
+	public void setIsponsor(String isponsor) {
+		Isponsor = isponsor;
+	}
+
 	public Integer getIid() {
 		return Iid;
 	}
@@ -26,10 +35,10 @@ public class Inmeeting {
 	public void setPid(Integer pid) {
 		Pid = pid;
 	}
-	public Date getIdate() {
+	public String getIdate() {
 		return Idate;
 	}
-	public void setIdate(Date idate) {
+	public void setIdate(String idate) {
 		Idate = idate;
 	}
 	public String getIplace() {

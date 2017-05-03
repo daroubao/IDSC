@@ -155,7 +155,7 @@ public class PaperController {
      			ResultContent r=new ResultContent();
      			r.setTitle(p.getPname());
      			r.setContent("电话:"+p.getPtel()+"  传真:"+p.getPfax()+"  邮箱:"+p.getPemail()+"..");
-     			r.setUrl(p.getPurl());
+     			r.setUrl("/LabTeamMVCOK/member/"+p.getPname());
 				result.add(r);
 			}
      	}
@@ -206,7 +206,7 @@ public class PaperController {
      			ResultContent r=new ResultContent();
      			r.setTitle(m.getItheme());
      			r.setContent("会议时间:"+m.getIdate()+"  会议地点:"+m.getIplace());
-     			r.setUrl("#");
+     			r.setUrl("/LabTeamMVCOK/recent/meeting");
      			result.add(r);
 			}
      	}
