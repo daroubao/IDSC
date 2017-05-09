@@ -91,7 +91,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<li><span ><b style="mso-bidi-font-weight:bold"><span><a href="<%= request.getContextPath()%>/welcome/Introduction"><span>INTRODUCTION</span></a></span></b></span></li>
 		<li><span><b><span><a href="<%= request.getContextPath()%>/welcome/ResearchDirection"><span>RESEARCH DIRECTION</span></a></span></b></span</li>
 		<li><span><a href="<%= request.getContextPath()%>/welcome/Projects"><span>PROJECTS</span></a></span></b></span></li>
-		<li><span><a href="<%= request.getContextPath()%>/welcome/ShareCooperation"><span>SHARE COOPERATION</span></a></span></b></span></li>
+		<li><span><a href="<%= request.getContextPath()%>/welcome/ShareCooperation"><span>COOPERATION</span></a></span></b></span></li>
 		<li><span><a href="<%= request.getContextPath()%>/welcome/Contact"><span>CONTACT</span></a></span></b></span></li>				
 	</ul>
 </div>			
@@ -108,7 +108,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div class="case_right_f_r">
                     <a href="<%= request.getContextPath()%>/index">Home</a>&gt
                     <a href="<%= request.getContextPath()%>/welcome/Introduction">Lab Overview</a>&gt
-                    <a href="<%= request.getContextPath()%>/welcome/ShareCooperation">Share Cooperation</a>
+                    <a href="<%= request.getContextPath()%>/welcome/ShareCooperation">Cooperation</a>
                 </div>
                 <div class="clear"></div>
             </header>

@@ -108,7 +108,7 @@ public class ShowInfoController {
 			System.out.println(p1.getPname());
 		}*/
 		
-		List<Person> listFellow=showInfoService.findByPosition("Associate_Fellow");
+		List<Person> listFellow=showInfoService.findByPosition("Co-founders");
 		model.addAttribute("listFellow", listFellow);
 		Iterator<Person> it=listFellow.iterator();
 		while(it.hasNext()){
@@ -117,7 +117,7 @@ public class ShowInfoController {
 			System.out.println(p1.getPname());
 		}
 		
-		List<Person> listProfessor=showInfoService.findByPosition("Chair_Professor");
+		List<Person> listProfessor=showInfoService.findByPosition("Coordinators");
 		model.addAttribute("listProfessor", listProfessor);
 		Iterator<Person> it1=listProfessor.iterator();
 		while(it1.hasNext()){
@@ -126,7 +126,7 @@ public class ShowInfoController {
 			System.out.println(p1.getPname());
 		}
 		
-		List<Person> listLecturer=showInfoService.findByPosition("Lecturer");
+		List<Person> listLecturer=showInfoService.findByPosition("Academic Advisory Panel");
 		model.addAttribute("listLecturer", listLecturer);
 		Iterator<Person> it2=listLecturer.iterator();
 		while(it2.hasNext()){
@@ -134,7 +134,8 @@ public class ShowInfoController {
 			System.out.println("这里显示左下角的Lecturer人员");
 			System.out.println(p1.getPname());
 		}
-		
+		List<Person> listothers=showInfoService.findByPosition("LabMembers");
+		model.addAttribute("listothers", listothers);
 		
 		
 /*//		int Pid=p.getPid();

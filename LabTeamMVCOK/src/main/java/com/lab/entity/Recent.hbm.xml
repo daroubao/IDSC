@@ -12,6 +12,7 @@
 		<property name="RUrl" column="RUrl" />
 		<property name="RText" column="RText" />
 		<property name="RPicture" column="RPicture" />
+		<property name="RProjectId" column="RProjectId" />
 		
 	</class>
 </hibernate-mapping>

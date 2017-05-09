@@ -2,6 +2,7 @@ package com.lab.entity;
 
 
 
+
 public class Recent {
 	
 	private int Rid;
@@ -10,6 +11,7 @@ public class Recent {
 	private String RText;
 	private String RUrl;
 	private String RPicture;
+	private Integer RProjectId;
 	
 	public String getRdate() {
 		return Rdate;
@@ -46,6 +48,12 @@ public class Recent {
 	}
 	public void setRthem(String rthem) {
 		Rthem = rthem;
+	}
+	public Integer getRProjectId() {
+		return RProjectId;
+	}
+	public void setRProjectId(Integer rProjectId) {
+		RProjectId = rProjectId;
 	}
 
 	

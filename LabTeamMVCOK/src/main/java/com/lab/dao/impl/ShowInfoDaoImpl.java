@@ -101,7 +101,7 @@ public class ShowInfoDaoImpl implements ShowInfoDao {
 	@Override
 	public List<Person> findAssociate_Fellow() {
 		// TODO Auto-generated method stub
-		String hql="from Person p where p.Pposition='Associate_Fellow'";
+		String hql="from Person p where p.Pposition='Co-founders'";
 		Session session=sessionFactory.getCurrentSession();
 		Transaction tx=session.beginTransaction();
 		Query query=session.createQuery(hql);
@@ -115,7 +115,7 @@ public class ShowInfoDaoImpl implements ShowInfoDao {
 	@Override
 	public List<Person> findChair_Professor() {
 		// TODO Auto-generated method stub
-		String hql="from Person p where p.Pposition='Chair_Professor'";
+		String hql="from Person p where p.Pposition='Coordinators'";
 		Session session=sessionFactory.getCurrentSession();
 		Transaction tx=session.beginTransaction();
 		Query query=session.createQuery(hql);
@@ -129,7 +129,7 @@ public class ShowInfoDaoImpl implements ShowInfoDao {
 	@Override
 	public List<Person> findLecturer() {
 		// TODO Auto-generated method stub
-		String hql="from Person p where p.Pposition='Lecturer'";
+		String hql="from Person p where p.Pposition='Academic Advisory Panel'";
 		Session session=sessionFactory.getCurrentSession();
 		Transaction tx=session.beginTransaction();
 		Query query=session.createQuery(hql);

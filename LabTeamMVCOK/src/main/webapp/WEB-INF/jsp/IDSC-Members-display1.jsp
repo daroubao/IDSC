@@ -28,10 +28,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		
 	    <!--  jquery plguin -->
-	    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</script>
-    	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-		<script src="js/jquery-ui.min.js"></script>
+    	<script src="js/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="js/jquery.media.js"></script>
 		<script src="js/css3-mediaqueries.js"></script>
 		<script src="js/fwslider.js"></script>
@@ -173,7 +173,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li>
 					<span class="picture"><h2></h2></span>
 					<!-- <img style="box-shadow: 1px 1px 5px #696969;" src="images/zhihua4.jpg" alt=""> -->
-					<img style="box-shadow: 1px 1px 5px #696969;" src="images/${p.ppicture }" alt="刘继明">
+					<img style="box-shadow: 1px 1px 5px #696969;" src="images/${p.ppicture }" alt="照片">
 					<ul>
 						<li style=" line-height:180%;font-size:2.2em;font-weight:bold;border-bottom: 1px solid #eee;margin-right:20px;">
 							${p.pname }
@@ -267,7 +267,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<li class="information-sdbar-logo"><img src="images/membersicon.png" alt=""/></li>
 		<li  style="text-align:center;font-size:12px;padding-left:0px;"><a     href="<%= request.getContextPath()%>/members">---REASERCH MEMBERS---</a></li> 
 		
-		<li><a  class="inactive">Chair Professor</a>
+		<li><a  class="inactive">Co-founders</a>
 			
 			<ul style="display: none;">
 			<c:forEach var="p" items="${listProfessor }">
@@ -277,16 +277,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<!-- <li class="last"><a href="#">Jiming Liu</a></li>  -->
 			</ul>
 		</li>
-		<li><a  class="inactive">Associate Fellow</a>
+		<li><a  class="inactive">Coordinators</a>
 			<ul style="display: none">
 				<c:forEach var="p" items="${listFellow }">
 				<li class="last"><a href="<%= request.getContextPath()%>/member/${p.pname }">${p.pname }</a></li> 
 			</c:forEach> 
 			</ul>
 		</li>
-		<li><a  class="inactive">Lecturer</a>
+		<li><a  class="inactive">Academic Advisory</a>
 			<ul style="display: none">
 				<c:forEach var="p" items="${listLecturer }">
+				<li class="last"><a href="<%= request.getContextPath()%>/member/${p.pname }">${p.pname }</a></li> 
+			</c:forEach>
+			</ul>
+		</li>
+		<li><a  class="inactive">LabMembers</a>
+			<ul style="display: none">
+				<c:forEach var="p" items="${listothers }">
 				<li class="last"><a href="<%= request.getContextPath()%>/member/${p.pname }">${p.pname }</a></li> 
 			</c:forEach>
 			</ul>

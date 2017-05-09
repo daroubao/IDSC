@@ -87,9 +87,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="AM">
 	<h1>Members</h1>
 	<ul>
-		<li><span ><b style="mso-bidi-font-weight:bold"><span><a href="<%= request.getContextPath()%>/showPos/Chair_Professor"><span>Chair Professor</span></a></span></b></span></li>
-		<li><span><b><span><a href="<%= request.getContextPath()%>/showPos/Associate_Fellow"><span>Associate Fellow</span></a></span></b></span</li>
-		<li><span><a href="<%= request.getContextPath()%>/showPos/Lecturer"><span>Lecturer</span></a></span></b></span></li>
+		<li><span ><b style="mso-bidi-font-weight:bold"><span><a href="<%= request.getContextPath()%>/showPos/Co-founders"><span>Co-founders</span></a></span></b></span></li>
+		<li><span><b><span><a href="<%= request.getContextPath()%>/showPos/Coordinators"><span>Coordinators</span></a></span></b></span</li>
+		<li><span><a href="<%= request.getContextPath()%>/showPos/Academic Advisory Panel"><span>Academic Advisory Panel</span></a></span></b></span></li>
+		<li><span><a href="<%= request.getContextPath()%>/showPos/LabMembers"><span>LabMembers</span></a></span></b></span></li>
 	</ul>
 </div>			
 </div>

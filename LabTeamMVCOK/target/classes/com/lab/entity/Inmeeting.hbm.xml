@@ -8,7 +8,6 @@
 			<generator class="native" />
 		</id>
 		<property name="Itheme" column="Itheme" />
-		<property name="Pid" column="Pid" />
 		<property name="Idate" column="Idate" />
 		<property name="Iplace" column="Iplace" />
 		<property name="Isponsor" column="Isponsor" />

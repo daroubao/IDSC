@@ -9,6 +9,12 @@
 		</id>
 		<property name="PrTheme" column="PrTheme" />
 		<property name="PrDescription" column="PrDescription" />
+		<property name="PrUpdate" column="PrUpdate" />
+		<property name="PrBackground" column="PrBackground" />
+		<property name="PrKeyWords" column="PrKeyWords" />
+		<property name="PrPicture" column="PrPicture" />
+		<property name="PrAnnotation" column="PrAnnotation" />
+		
 		
 	</class>
 </hibernate-mapping>

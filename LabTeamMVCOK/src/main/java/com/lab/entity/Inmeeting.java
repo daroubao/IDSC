@@ -4,7 +4,6 @@ package com.lab.entity;
 public class Inmeeting {
 	private Integer Iid;
 	private String Itheme;
-	private Integer Pid;
 	private String Idate;
 	private String Iplace;
 	private String Isponsor;
@@ -28,12 +27,6 @@ public class Inmeeting {
 	}
 	public void setItheme(String itheme) {
 		Itheme = itheme;
-	}
-	public Integer getPid() {
-		return Pid;
-	}
-	public void setPid(Integer pid) {
-		Pid = pid;
 	}
 	public String getIdate() {
 		return Idate;

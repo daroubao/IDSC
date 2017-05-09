@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -12,24 +13,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+		
 		<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-		<link  href="css/style_welcome.css" rel="stylesheet"type="text/css">		
-    	<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+		<link  href="css/style_welcome.css" rel="stylesheet"type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
     	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 		<!--start slider -->
 	    <link rel="stylesheet" href="css/fwslider.css" media="all">
-
+	    
 		<!--  jquery plguin -->
 	    <script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>		
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>	
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</script>
-		<script src="js/jquery-ui.min.js"></script>
+    	<script src="js/jquery-ui.min.js"></script>
 		<script src="js/css3-mediaqueries.js"></script>
 		<script src="js/fwslider.js"></script>
+
 
 </head>
 <body>
@@ -51,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 <div style="width:1000000px;">
 					 <div style="float:left;;">
 					 <nav>
-			        		  <ul>
+			        		 <ul>
 								<li><a href="<%=path %>/index">HOME</a></li>
 								<li class="active"><a href="<%=path %>/welcome/Introduction" class="scroll">IDSC</a></li>
 								<li><a href="<%=path %>/recent/r" class="scroll">EVENTS</a></li>
@@ -89,7 +91,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<li><span><b><span><a href="<%= request.getContextPath()%>/welcome/ResearchDirection"><span>RESEARCH DIRECTION</span></a></span></b></span</li>
 		<li><span><a href="<%= request.getContextPath()%>/welcome/Projects"><span>PROJECTS</span></a></span></b></span></li>
 		<li><span><a href="<%= request.getContextPath()%>/welcome/ShareCooperation"><span>COOPERATION</span></a></span></b></span></li>
-		<li><span><a href="<%= request.getContextPath()%>/welcome/Contact"><span>CONTACT</span></a></span></b></span></li>				
+		<li><span><a href="<%= request.getContextPath()%>/welcome/Contact"><span>CONTACT</span></a></span></b></span></li>			
 	</ul>
 </div>			
 </div>
@@ -101,24 +103,62 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="content">
 			
 			<header class="case_right_f">
-                <div class="case_right_f_l">Introduction</div>
+                <div class="case_right_f_l">Projects</div>
                 <div class="case_right_f_r">
                     <a href="<%= request.getContextPath()%>/index">Home</a>&gt
                     <a href="<%= request.getContextPath()%>/welcome/Introduction">Lab Overview</a>&gt
-                    <a href="<%= request.getContextPath()%>/welcome/Introduction">Introduction</a>
+                    <a href="<%= request.getContextPath()%>/welcome/Projects">Projects</a>
                 </div>
                 <div class="clear"></div>
             </header>
                                                       <!--正文-->			
-			<a  href=""><img src="images/intro1.jpg" alt=""/></a>
-			
-			<h2>Foreword</h2>
-			<p>
-			IDSC is dedicated to supporting all users of data from the novice researcher to the experienced data analyst.
-			IDSC aims at becoming the place for economically minded technologists and technologically savvy economists looking for data support, data access support and data services about labor economics.
-			IDSC is actively involved in organizing events (see our next Red Cube Seminar Talk) for data professionals, data analysts, and scientific data users and young researchers to discuss and share findings and to establish contacts for future cooperation.
+			<h2>Project #${pr.prid }  &nbsp;&nbsp;${pr.prTheme }</h2>
+			</br></br>
+			<p style="margin-left: 5px;padding-left: 10px;">
+				<span>Update: ${pr.prUpdate }</span>
 			</p>
-			
+			<p style="margin-left: 5px;padding-left: 10px;text-align: justify;">
+				<b><span style="color: #36506C;font-weight:bold;font-size: 11.5pt;">Background</span></b>
+				<span>: ${pr.prBackground }</span>
+			</p>
+			<!-- 下面是相关图片 -->
+			<c:if test="${!empty imgs}">
+				<c:forEach items="${imgs}" var="imgs">
+				  <p style="margin-left: 5px;padding-left: 10px;">	
+					<span><img src="images/${imgs.key }"></span>
+					</br>
+				  <c:if test="${!empty imgs.value}">
+					<span style="font-size: 9.5pt;text-align: center;">${imgs.value }</span> 
+					</br>
+				  </c:if>
+				  </p>
+				</c:forEach>
+			</c:if>
+			<p style="margin-left: 5px;padding-left: 10px;text-align: justify;">
+				<b><span style="color: #36506C;font-weight:bold;font-size: 11.5pt;">Key words</span></b>
+				<span>: ${pr.prKeyWords }</span>
+			</p>
+			<p style="margin-left: 5px;padding-left: 10px;">
+			<b><span style="color: #36506C;font-weight:bold;font-size: 11.5pt;">News</span></b>
+			<table>
+				<tbody>
+				  <c:if test="${!empty re}">
+				    <c:forEach items="${re}" var="re">
+					<tr>
+						<td style="width: 123px;">[${re.rdate }]</td>
+						<td>
+							<p>
+							<span>${re.rthem }&nbsp;&nbsp;[
+								<a href="<%=request.getContextPath()%>/recent/${re.RUrl}">read</a>
+							]</span>
+							</p>
+						</td>
+					</tr>
+					</c:forEach>
+				  </c:if>
+				</tbody>
+			</table>
+		    </p>
 	</div>
 	</div>
     </div>

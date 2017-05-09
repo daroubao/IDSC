@@ -9,6 +9,7 @@ import com.lab.dao.AboutUsDao;
 import com.lab.entity.Corganization;
 import com.lab.entity.Cscholar;
 import com.lab.entity.Project;
+import com.lab.entity.Recent;
 import com.lab.service.AboutUsService;
 @Service
 public class AboutUsServiceImpl implements AboutUsService {
@@ -29,5 +30,13 @@ public class AboutUsServiceImpl implements AboutUsService {
 	
 	public List<Project> getProjects(){
 		return aboutUsDao.getProjects();
+	}
+	
+	public Project getProject(String Prid){
+		return aboutUsDao.getProject(Prid);
+	}
+	
+	public List<Recent> getAboutRecents(String Prid){
+		return aboutUsDao.getAboutRecents(Prid);
 	}
 }

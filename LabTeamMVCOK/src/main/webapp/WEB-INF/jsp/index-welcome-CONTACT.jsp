@@ -89,7 +89,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<li><span ><b style="mso-bidi-font-weight:bold"><span><a href="<%= request.getContextPath()%>/welcome/Introduction"><span>INTRODUCTION</span></a></span></b></span></li>
 		<li><span><b><span><a href="<%= request.getContextPath()%>/welcome/ResearchDirection"><span>RESEARCH DIRECTION</span></a></span></b></span</li>
 		<li><span><a href="<%= request.getContextPath()%>/welcome/Projects"><span>PROJECTS</span></a></span></b></span></li>
-		<li><span><a href="<%= request.getContextPath()%>/welcome/ShareCooperation"><span>SHARE COOPERATION</span></a></span></b></span></li>
+		<li><span><a href="<%= request.getContextPath()%>/welcome/ShareCooperation"><span>COOPERATION</span></a></span></b></span></li>
 		<li><span><a href="<%= request.getContextPath()%>/welcome/Contact"><span>CONTACT</span></a></span></b></span></li>			
 	</ul>
 </div>			

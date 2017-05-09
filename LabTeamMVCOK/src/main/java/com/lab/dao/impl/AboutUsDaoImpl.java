@@ -14,6 +14,7 @@ import com.lab.dao.AboutUsDao;
 import com.lab.entity.Corganization;
 import com.lab.entity.Cscholar;
 import com.lab.entity.Project;
+import com.lab.entity.Recent;
 @Repository
 public class AboutUsDaoImpl implements AboutUsDao {
 	@Resource
@@ -51,4 +52,26 @@ public class AboutUsDaoImpl implements AboutUsDao {
 		tx.commit();
 		return pr;
 	}
+	
+	public Project getProject(String Prid){
+		String hql="from Project p where p.Prid="+Prid;
+		Session session=sessionFactory.getCurrentSession();
+		Transaction tx=session.beginTransaction();
+		Query query=session.createQuery(hql);
+		Project pr=(Project)query.uniqueResult();
+		tx.commit();
+		return pr;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Recent> getAboutRecents(String Prid){
+		String hql="from Recent r where r.RProjectId="+Prid;
+		Session session=sessionFactory.getCurrentSession();
+		Transaction tx=session.beginTransaction();
+		Query query=session.createQuery(hql);
+		List<Recent> re=query.list();
+		tx.commit();
+		return re;
+	}
+	
 }

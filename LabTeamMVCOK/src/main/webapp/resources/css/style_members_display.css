@@ -264,7 +264,8 @@ body {
 	padding: 10px 0;
 }
 .sidebar ul li span {
-	background: url(../images/icons.png) no-repeat;
+	/* background: url(../images/icons.png) no-repeat;
+	 */
 	display: block;
 	margin: 0;
 	padding: 0 0 0 23px;
@@ -325,7 +326,8 @@ body {
 	
 }
 #body .content h3 {
-	background: url(../images/icons.png) no-repeat 0 -350px;
+	/* background: url(../images/icons.png) no-repeat 0 -350px;
+	 */
 	color: #2070c2;
 	font-size: 14px;
 	font-weight: 700;
@@ -682,7 +684,8 @@ body {
 	padding: 0;
 }
  #sidebar div h3 {
-	background: url(../images/icons.png) no-repeat;
+	/* background: url(../images/icons.png) no-repeat;
+	 */
 	border-bottom: 2px solid #ffe600;
 	color: #ffe600;
 	font-size: 16px;
@@ -834,7 +837,8 @@ a:link,a:visited{text-decoration: none;}
 	padding: 0;
 }
 #footer div ul li a {
-	background: url(../images/icons.png) no-repeat;
+	/* background: url(../images/icons.png) no-repeat;
+	 */
 	display: block;
 	height: 27px;
 	margin: 0;
